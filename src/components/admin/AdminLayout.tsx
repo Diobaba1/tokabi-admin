@@ -23,6 +23,10 @@ import {
   Database,
   Server,
   FileText,
+  Bot,
+  LineChart,
+  Clock,
+  Cpu,
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -55,6 +59,25 @@ const AdminLayout: React.FC = () => {
         { name: 'Overview', path: '/admin', icon: <LayoutDashboard size={20} /> }
       ]
     },
+
+    {
+      title: 'TRADING BOT',
+      items: [
+        { name: 'Control Center', path: '/admin/trading-bot', icon: <Bot size={20} /> },
+        { name: 'Signals', path: '/admin/trading-bot/signals', icon: <Megaphone size={20} />, badge: 3 },
+        { name: 'Analysis', path: '/admin/trading-bot/analysis', icon: <Zap size={20} /> },
+        { name: 'Auto-Analysis Config', path: '/admin/trading-bot/analysis/auto-config', icon: <Settings size={20} /> },
+        { name: 'Analysis History', path: '/admin/trading-bot/analysis/requests', icon: <Clock size={20} /> },
+      ]
+    },
+
+    {
+      title: 'LLM MANAGEMENT',
+      items: [
+        { name: 'LLM Providers', path: '/admin/llm-providers', icon: <Cpu size={20} /> },
+      ]
+    },
+
     {
       title: 'USER MANAGEMENT',
       items: [
@@ -62,10 +85,10 @@ const AdminLayout: React.FC = () => {
         { name: 'Trades', path: '/admin/trades', icon: <TrendingUp size={20} /> },
       ]
     },
+
     {
       title: 'CONTENT & SERVICES',
       items: [
-        { name: 'Signals', path: '/admin/signals', icon: <Megaphone size={20} />, badge: 3 },
         { name: 'Subscriptions', path: '/admin/subscriptions', icon: <Activity size={20} /> },
       ]
     },
@@ -80,7 +103,7 @@ const AdminLayout: React.FC = () => {
       title: 'ANALYTICS',
       items: [
         { name: 'Portfolios', path: '/admin/portfolios', icon: <BarChart3 size={20} /> },
-        { name: 'Platform Analytics', path: '/admin/analytics', icon: <Database size={20} /> },
+        { name: 'Platform Analytics', path: '/admin/analytics', icon: <LineChart size={20} /> },
       ]
     },
     {
@@ -94,7 +117,6 @@ const AdminLayout: React.FC = () => {
       title: 'SYSTEM',
       items: [
         { name: 'System Health', path: '/admin/system', icon: <Server size={20} /> },
-        { name: 'Settings', path: '/admin/settings', icon: <Settings size={20} /> },
       ]
     },
   ];
